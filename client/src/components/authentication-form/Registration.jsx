@@ -1,7 +1,7 @@
 import React from 'react';
 import style from "./authentification.module.scss";
-import FormInput from "../../elements/FormInput";
-import FormButton from "../../elements/FormButton";
+import FormInput from "../../elements/form-input/FormInput";
+import FormButton from "../../elements/form-button/FormButton";
 
 function Registration(props) {
     return (

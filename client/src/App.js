@@ -11,8 +11,8 @@ const App = () => {
             <div className={style.container}>
                 <Header/>
                 {/*<MainList/>*/}
-                {/*<AuthenticationForm/>*/}
-                <VacationForm/>
+                <AuthenticationForm/>
+                {/*<VacationForm/>*/}
             </div>
         </div>
     );

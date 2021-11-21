@@ -1,5 +1,5 @@
 import React from 'react';
-import style from "./formInput.module.scss";
+import style from "../form-input/formInput.module.scss";
 
 function FormButton(props) {
     return (

@@ -1,4 +1,4 @@
-@import "../variables.scss";
+@import "../../variables";
 
 .inputArea {
   max-width: calc(100% - 3rem);
@@ -19,11 +19,12 @@
   input, .formButton, textarea {
     border: 1px solid #ccc;
     border-radius: .25rem;
-    background: transparent;
+    background: rgba(255, 255, 255, 0.9);
     width: -webkit-fill-available;
     height: 2.5rem;
     padding: .5rem .75rem;
     transition: 0.4s;
+    font-size: 1.125rem;
     &[type="date"] {
       align-items: center;
       padding-inline-start: 30%;
@@ -39,6 +40,8 @@
       background-color: $secondary-font-color;
       border: 1px solid #ccc;
       text-align: center;
+      color: #ffffff;
+      font-weight: 700;
     }
   }
 }
@@ -101,6 +104,7 @@
   left: 14px;
   width: 100%;
   top: 10px;
+  font-size: 1.125rem;
   color: #aaa;
   transition: 0.3s;
   z-index: -1;

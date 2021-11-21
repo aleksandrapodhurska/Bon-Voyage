@@ -1,13 +1,14 @@
 import React from 'react';
 import style from './header.module.scss';
-import user from '../../assets/images/user.png';
+import man from '../../assets/icons/man.png';
+import woman from '../../assets/icons/woman.png';
 
 function Header(props) {
     return (
         <div className={style.header}>
             <div className={style.user}>
                 <div className={style.profileIcon}>
-                    <img src={user}/>
+                    <img src={woman}/>
                 </div>
                 <div>Hi Alex!</div>
             </div>
