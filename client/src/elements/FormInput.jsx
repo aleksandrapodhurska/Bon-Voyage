@@ -1,0 +1,19 @@
+import React from 'react';
+import style from "./formInput.module.scss";
+
+function FormInput(props) {
+    return (
+        <div className={`${style.inputArea} ${props.type === 'date' ? style.narrow : ''}`}>
+            {props.input === 'textarea' ?
+                <textarea className={style.effect} required></textarea> :
+                <input type={props.type} className={style.effect} required/>
+            }
+            <span className={style.floatingLabel}>{props.placeholder}</span>
+            <span className={style.focusBorder}>
+						<i></i>
+					</span>
+        </div>
+    );
+}
+
+export default FormInput;

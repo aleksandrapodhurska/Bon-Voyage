@@ -1,0 +1,25 @@
+@import "../../variables";
+
+.formContainer {
+    margin: 20px auto;
+    max-width: $small-form-width;
+    width: 100%;
+    height: fit-content;
+    border: 1px solid;
+    border-radius: .25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    h1 {
+        color: $secondary-font-color;
+    }
+}
+
+form {
+    width: $small-form-width;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}

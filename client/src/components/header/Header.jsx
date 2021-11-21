@@ -1,0 +1,20 @@
+import React from 'react';
+import style from './header.module.scss';
+import user from '../../assets/images/user.png';
+
+function Header(props) {
+    return (
+        <div className={style.header}>
+            <div className={style.user}>
+                <div className={style.profileIcon}>
+                    <img src={user}/>
+                </div>
+                <div>Hi Alex!</div>
+            </div>
+            <div className={style.logo}>BonVoyage</div>
+            <div className={style.logout}><p>Logout</p></div>
+        </div>
+    );
+}
+
+export default Header;

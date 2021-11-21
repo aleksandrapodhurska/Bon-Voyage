@@ -1,0 +1,82 @@
+[{
+  "destination": "South Island",
+  "country": "New Zealand",
+  "description": "New Zealand's South Island brims with majestic landscapes at every turn, from dramatic mountains to fjords to glaciers. Here, you can admire the mountains of Fiordland National Park, a UNESCO World Heritage Site, from hiking trails or a boat on Milford Sound. At night, journey to the University of Canterbury's Mount John Observatory to gaze at the starry skies. You can also indulge your inner daredevil in Queenstown, explore two of the most accessible glaciers in the world on the island's west coast or sample delicious food and wine in the Marlborough region.",
+  "image": "url",
+  "price": 3250,
+  "date-from": "12-11-2021",
+  "date-to": "17-11-2021",
+  "followers": []
+},
+{
+"destination": "Paris",
+"country": "France",
+"description": "The magnetic City of Light draws visitors from around the globe who come to see iconic attractions like the Eiffel Tower, the Louvre and the Arc de Triomphe. But what travelers really fall in love with are the city's quaint cafes, vibrant markets, trendy shopping districts and unmistakable je ne sais quoi charm. Get lost wandering along Paris' cobblestone streets, or grab a croissant and relax on the banks of the Seine for hours. If you're up for a quick daytrip, head about 15 miles southwest of the city center to another must-see attraction: the Palace of Versailles.",
+"image": "url",
+"price": 1700,
+  "date-from": "25-11-2021",
+  "date-to": "1-12-2021",
+"followers": []
+},
+{
+"destination": "Bora Bora",
+"country": "French Polynesia",
+"description": "What this small French Polynesian island may lack in size it makes up for in sheer tropical beauty. Here, you'll find picturesque beaches, lush jungles and luxurious resorts. The island's dormant volcano, Mount Otemanu, makes for a great photo-op or challenging hike, and the friendly Bora Bora locals can help you catch a glimpse of the island's best sights during an off-road excursion. To relax, head to Matira Beach for crystal-clear water and soft sand. Although a trip to Bora Bora is very expensive, most travelers say it's worth every penny.",
+"image": "url",
+"price": 4500,
+  "date-from": "2-12-2021",
+  "date-to": "12-12-2021",
+"followers": []
+},
+{
+"destination": "Tahiti",
+"country": "French Polynesia",
+"description": "Travel to this island – the largest in French Polynesia – if you've been dreaming of a vacation spent lazing in a lavish overwater bungalow. Beyond the posh resorts, Tahiti boasts black sand beaches, a bustling capital and prime snorkeling and surfing conditions. If you're looking for more cultural experiences, check out some of the island's ancient temples or shop at its traditional covered markets. To save money, opt to stay in a vacation rental.",
+"image": "url",
+"price": 4700,
+  "date-from": "21-12-2021",
+  "date-to": "2-01-2022",
+"followers": []
+},
+{
+"destination": "Rome",
+"country": "Italy",
+"description": "When you visit the Eternal City, prepare to cross a few must-see attractions – including the Colosseum, the Trevi Fountain and the Pantheon – off of your bucket list. Additional treasures, such as St. Peter's Basilica and the Sistine Chapel, can be found in nearby Vatican City. Escape the tourist crowds by taking a twilight stroll along the cobblestone streets of Trastevere, or head to Mercato Centrale Roma to sample local delicacies like gelato and pizza. Before leaving, peruse some of Rome's lesser-known museums, art galleries and boutiques.",
+"image": "url",
+"price": 2000,
+  "date-from": "12-02-2022",
+  "date-to": "15-02-2022",
+"followers": []
+},
+  {
+"destination": "Florence",
+"country": "Italy",
+"description": "Florence offers plenty of world-famous attractions, including the Duomo, Piazzale Michelangelo and Piazza della Signoria. Plus, it's a haven for art lovers thanks to art-focused museums like the Galleria dell'Accademia and the Uffizi Gallery. After appreciating this historic Italian city's Renaissance architecture and art, sample some of the region's delectable Tuscan food and wine at Florence's quaint cafes, gelato shops and ristorantes. Then, cross the Ponte Vecchio to get to the acclaimed Pitti Palace and the Boboli Gardens, where you'll find fountains, meticulously landscaped green spaces and panoramic views. ",
+"image": "url",
+"price": 3250,
+    "date-from": "15-03-2022",
+    "date-to": "22-03-2022",
+"followers": []
+},
+{
+"destination": "Tokyo",
+"country": "Japan",
+"description": "Simply setting foot in Japan's cosmopolitan capital is an experience within itself. A city known for its bustling streets and flashing neon signs, Tokyo has an electric energy and plenty of attractions to discover. Foodies won't be let down by the city's fresh sushi and hearty ramen. Budding photographers and adrenaline junkies will love taking in the sweeping panoramas from the top of the Tokyo Skytree. Shopaholics will find plenty of must-have designer products in Ginza. And for history buffs, Tokyo offers centuries-old temples and shrines to explore.",
+"image": "url",
+"price": 4250,
+  "date-from": "12-02-2022",
+  "date-to": "23-02-2022",
+"followers": []
+},
+{
+"destination": "Santorini",
+"country": "Greece",
+"description": "Frequently touted as a top honeymoon destination, this Greek isle woos newlyweds every year with its breathtaking sunsets, pastel-hued villages and colorful beaches. Archaeological sites, such as Ancient Thira and Ancient Akrotiri, beckon to history buffs, while central Santorini's winery tours lure oenophiles. Active travelers will enjoy hiking along the rim of the caldera to witness breathtaking views of the island. For a relaxing daytrip, hop on a boat to Thirassia, then head to Amoudi Bay to watch the sun set while dining alfresco.",
+"image": "url",
+"price": 1250,
+  "date-from": "12-04-2022",
+  "date-to": "17-04-2022",
+"followers": []
+}
+
+]
