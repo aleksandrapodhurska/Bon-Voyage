@@ -21,3 +21,7 @@ body {
 button, input, textarea {
   all: unset;
 }
+
+a, button {
+  cursor: pointer;
+}

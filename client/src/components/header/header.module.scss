@@ -32,29 +32,45 @@
     position: relative;
 
     transition: all ease .3s;
+    a {
+        display: block;
+        &:after {
+            position: absolute;
+            content: '';
+            height: 0px;
+            bottom: -4px;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            width: 100%;
+            background: $secondary-font-color;
+
+            transition: all ease .3s;
+        }
+    }
 }
 
-.logout:after {
-    position: absolute;
-    content: '';
-    height: 0px;
-    bottom: -4px;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
-    width: 100%;
-    background: $secondary-font-color;
-
-    transition: all ease .3s;
-}
-
-.logout:hover {
+//.logout a:after {
+//    position: absolute;
+//    content: '';
+//    height: 0px;
+//    bottom: -4px;
+//    margin: 0 auto;
+//    left: 0;
+//    right: 0;
+//    width: 100%;
+//    background: $secondary-font-color;
+//
+//    transition: all ease .3s;
+//}
+//
+.logout a:hover {
     color: $secondary-font-color;
 }
-
-.logout:hover:after {
-    height: 2px;
-}
+//
+//.logout a:hover:after {
+//    height: 2px;
+//}
 
 .profileIcon {
     margin-right: $small-gap;

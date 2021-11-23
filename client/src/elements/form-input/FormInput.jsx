@@ -6,7 +6,7 @@ function FormInput(props) {
         <div className={`${style.inputArea} ${props.type === 'date' ? style.narrow : ''}`}>
             {props.input === 'textarea' ?
                 <textarea className={style.effect} required></textarea> :
-                <input type={props.type} className={style.effect} required/>
+                <input type={props.type} className={style.effect} required name={props.name} onChange={props.onChange} value={props.value}/>
             }
             <span className={style.floatingLabel}>{props.placeholder}</span>
             <span className={style.focusBorder}>

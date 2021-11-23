@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
-const cors = require('cors');
 const cookieParser = require('cookie-parser');
+const cors = require('cors');
 const mongoose = require('mongoose');
 const router = require('./routes/vacation-route');
 const userRouter = require('./routes/user-route');
@@ -12,7 +12,10 @@ const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors());
+app.use(cors({
+    origin: process.env.CLIENT_URL,
+    credentials: true
+}));
 app.use('/api', router);
 app.use('/api', userRouter);
 app.use(errorMiddleware);

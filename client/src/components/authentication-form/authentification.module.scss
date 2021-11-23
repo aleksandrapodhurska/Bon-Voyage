@@ -31,4 +31,15 @@ form {
     background-image: url("../../assets/images/family.jpg");
     background-size: cover;
     background-position: bottom;
+    .welcome {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10vh;
+        justify-content: space-between;
+        height: 10vh;
+        h1, a {
+            color: $secondary-font-color;
+        }
+    }
 }
