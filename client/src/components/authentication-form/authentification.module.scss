@@ -1,7 +1,7 @@
 @import "../../variables";
 
 .formContainer {
-    margin: 10vh auto;
+    margin: 5vh auto;
     max-width: $small-form-width;
     width: 100%;
     height: fit-content;
@@ -12,12 +12,14 @@
     align-items: center;
     padding: 1.5rem 1rem;
     background-color: rgba(255, 255, 255, 0.61);
-    h1 {
+    h2, a {
         color: $secondary-font-color;
+        font-weight: bold;
+        font-weight: 700;
     }
 }
 
-form {
+.form {
     width: $small-form-width;
     display: flex;
     flex-wrap: wrap;
@@ -35,11 +37,14 @@ form {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 10vh;
+        margin-top: 5vh;
         justify-content: space-between;
         height: 10vh;
         h1, a {
             color: $secondary-font-color;
+        }
+        a {
+            font-weight: 700;
         }
     }
 }

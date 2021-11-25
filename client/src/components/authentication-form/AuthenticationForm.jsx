@@ -1,20 +1,10 @@
-import React, {useEffect} from 'react';
-import Login from "./Login";
+import React from 'react';
 import style from "./authentification.module.scss";
 import {useNavigate, Outlet} from "react-router-dom";
-import AuthService from "../../services/authService";
 
 function AuthenticationForm() {
     let navigate = useNavigate();
-    useEffect(async () => {
-        if (localStorage.getItem('accessToken')) {
-            const isAuth = await AuthService.checkAuth();
-            console.log(isAuth);
-            if (isAuth) {
-                navigate('/main');
-            }
-        }
-    }, []);
+
     return (
         <div className={style.background}>
             <div className={style.welcome}>

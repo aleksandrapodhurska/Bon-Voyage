@@ -1,24 +1,31 @@
 import DataBase from "../ajax/ajax";
 
 export default class AdminService {
-// createVacation(vacation = {}) {
-    //     //  must get an object with all the values of vacation
-    //     return instance.post('/vacations', vacation)
-    //         .then((res) => {
-    //             return res.data;
-    //         })
-    // }
-    // editVacation(vacation = {}, id) {
-    //     //  must get an object with all the values of vacation
-    //     return instance.put(`/vacations/${id}`, vacation)
-    //         .then((res) => {
-    //             return res.data;
-    //         })
-    // }
-    // deleteVacation(id) {
-    //     return instance.delete(`/vacations/${id}`)
-    //         .then((res) => {
-    //             return res.data;
-    //         })
-    // }
+    static async createVacation(vacation) {
+        try {
+            const response = await DataBase.createVacation(vacation);
+            console.log(response);
+            return response;
+        } catch (e) {
+            console.log(e.response?.data?.message)
+        }
+    }
+    static async updateVacation(vacation = {}, id) {
+        try {
+            const response = await DataBase.updateVacation(vacation, id);
+            console.log(response);
+            return response;
+        } catch (e) {
+            console.log(e.response?.data?.message)
+        }
+    }
+    static async deleteVacation(id) {
+        try {
+            const response = await DataBase.deleteVacation(id);
+            console.log(response);
+            return response;
+        } catch (e) {
+            console.log(e.response?.data?.message)
+        }
+    }
 }

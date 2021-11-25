@@ -25,52 +25,60 @@
     color: $secondary-font-color;
 }
 
-.logout {
+.nav {
     flex: 1 1 33%;
     text-align: end;
-    color: $basic-gray-color;
-    position: relative;
 
     transition: all ease .3s;
-    a {
-        display: block;
-        &:after {
-            position: absolute;
-            content: '';
-            height: 0px;
-            bottom: -4px;
-            margin: 0 auto;
-            left: 0;
-            right: 0;
-            width: 100%;
-            background: $secondary-font-color;
+    .links {
+        display: flex;
+        justify-content: flex-end;
+        a {
+            position: relative;
+            display: block;
+            text-decoration: none;
+            color: $basic-gray-color;
+            margin-left: .75rem;
+            &:after {
+                position: absolute;
+                content: '';
+                height: 0px;
+                bottom: -4px;
+                margin: 0 auto;
+                left: 0;
+                right: 0;
+                width: 100%;
+                background: $secondary-font-color;
 
-            transition: all ease .3s;
-        }
+                transition: all ease .3s;
+            }
+    }
+
+
     }
 }
 
-//.logout a:after {
-//    position: absolute;
-//    content: '';
-//    height: 0px;
-//    bottom: -4px;
-//    margin: 0 auto;
-//    left: 0;
-//    right: 0;
-//    width: 100%;
-//    background: $secondary-font-color;
-//
-//    transition: all ease .3s;
-//}
-//
-.logout a:hover {
+.links a:after {
+    position: absolute;
+    content: '';
+    height: 0px;
+    bottom: -4px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: $secondary-font-color;
+
+    transition: all ease .3s;
+}
+
+.nav a:hover {
     color: $secondary-font-color;
 }
-//
-//.logout a:hover:after {
-//    height: 2px;
-//}
+
+.links a:hover:after {
+    height: 2px;
+}
 
 .profileIcon {
     margin-right: $small-gap;
