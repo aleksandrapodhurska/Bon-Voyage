@@ -28,13 +28,6 @@ function Login(props) {
         setUserdata(initialValue);
     }
 
-    // const [users, setusers] = useState([])
-    // const getUsers = async () => {
-    //     const users = await DataBase.getUsers();
-    //     console.log(users);
-    //     setusers(users);
-    // }
-
     return (
         <div className={style.background}>
             <div className={style.formContainer}>
@@ -47,7 +40,6 @@ function Login(props) {
                 <p>{authStatus == 200 ? 'Successfully logged in' : authStatus}</p>
             <p>Do not have an account yet? Proceed to <Link to='/registration'>Registration</Link></p>
             </div>
-            {/* <button onClick={getUsers}>Get users</button> */}
         </div>
     );
 }

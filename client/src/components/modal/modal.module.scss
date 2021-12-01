@@ -1,0 +1,48 @@
+@import "../../variables";
+
+.modal {
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 1000;
+	width: 100%;
+	height: 100%;
+	background: #0000007a;
+	overflow: hidden;
+}
+
+.modalDialog {
+	position: relative;
+	max-width: 460px;
+	margin: 5rem auto;
+}
+
+.modalContent {
+	padding: 40px;
+	width: 100%;
+	max-height: 80vh;
+	background-color: #fff;
+	border-radius: 0.25rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.modalTitle {
+	font-size: 1.5rem;
+	font-weight: 700;
+	line-height: 1.2;
+	text-transform: uppercase;
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+.modalBtn {
+	padding: 0.5rem;
+	border: 1px solid gray;
+	border-radius: 0.5rem;
+	background-color: $secondary-font-color;
+	color: white;
+	font-weight: 700;
+	width: 240px;
+}

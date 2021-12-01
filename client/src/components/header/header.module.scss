@@ -1,91 +1,89 @@
-@import '../../variables.scss';
+@import "../../variables.scss";
 
 .header {
-    height: 100%;
-    width: 100%;
-    padding: 0 $large-gap;
-    border-bottom: 1px solid $basic-gray-color;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    /*-webkit-box-shadow: inset 0px 0px 20px 1px var(--shadow-color);*/
-    /*box-shadow: inset 0px 0px 20px 1px var(--shadow-color);*/
+	height: 100%;
+	width: 100%;
+	padding: 0 $large-gap;
+	border-bottom: 1px solid $basic-gray-color;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	/*-webkit-box-shadow: inset 0px 0px 20px 1px var(--shadow-color);*/
+	/*box-shadow: inset 0px 0px 20px 1px var(--shadow-color);*/
 }
 
 .user {
-    flex: 1 1 33%;
-    display: flex;
-    align-items: center;
+	flex: 1 1 33%;
+	display: flex;
+	align-items: center;
 }
 
 .logo {
-    flex: 1 1 33%;
-    text-align: center;
-    font-weight: 700;
-    color: $secondary-font-color;
+	flex: 1 1 33%;
+	text-align: center;
+	font-weight: 700;
+	color: $secondary-font-color;
 }
 
 .nav {
-    flex: 1 1 33%;
-    text-align: end;
+	flex: 1 1 33%;
+	text-align: end;
 
-    transition: all ease .3s;
-    .links {
-        display: flex;
-        justify-content: flex-end;
-        a {
-            position: relative;
-            display: block;
-            text-decoration: none;
-            color: $basic-gray-color;
-            margin-left: .75rem;
-            &:after {
-                position: absolute;
-                content: '';
-                height: 0px;
-                bottom: -4px;
-                margin: 0 auto;
-                left: 0;
-                right: 0;
-                width: 100%;
-                background: $secondary-font-color;
+	transition: all ease 0.3s;
+	.links {
+		display: flex;
+		justify-content: flex-end;
+		a {
+			position: relative;
+			display: block;
+			text-decoration: none;
+			color: $basic-gray-color;
+			margin-left: 0.75rem;
+			&:after {
+				position: absolute;
+				content: "";
+				height: 0px;
+				bottom: -4px;
+				margin: 0 auto;
+				left: 0;
+				right: 0;
+				width: 100%;
+				background: $secondary-font-color;
 
-                transition: all ease .3s;
-            }
-    }
-
-
-    }
+				transition: all ease 0.3s;
+			}
+		}
+	}
 }
 
 .links a:after {
-    position: absolute;
-    content: '';
-    height: 0px;
-    bottom: -4px;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
-    width: 100%;
-    background: $secondary-font-color;
+	position: absolute;
+	content: "";
+	height: 0px;
+	bottom: -4px;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	width: 100%;
+	background: $secondary-font-color;
 
-    transition: all ease .3s;
+	transition: all ease 0.3s;
 }
 
 .nav a:hover {
-    color: $secondary-font-color;
+	color: $secondary-font-color;
 }
 
 .links a:hover:after {
-    height: 2px;
+	height: 2px;
 }
 
 .profileIcon {
-    margin-right: $small-gap;
+	margin-right: $small-gap;
 }
 
 .profileIcon img {
-    display: block;
-    width: 2rem;
-    height: 2rem;
+	display: block;
+	width: 2rem;
+	height: 2rem;
 }

@@ -1,0 +1,17 @@
+@import "../../variables";
+
+.chartWrapper {
+  width: 100vw;
+  height: 85vh;
+  .title {
+    text-align: center;
+    color: $secondary-font-color;
+    font-weight: bold;
+    font-weight: 700;
+  }
+
+  .subtitle {
+    text-align: center;
+  }
+}
+

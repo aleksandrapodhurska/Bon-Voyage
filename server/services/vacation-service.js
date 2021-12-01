@@ -20,16 +20,17 @@ class vacationService {
         if(!vacation) {
             throw new Error('Not provided enough data');
         }
-        const newVacation = await Vacation.create({...vacation, followers: []});
+        const {destination, country, description, image, price, dateFrom, dateTo} = vacation.vacation;
+        const newVacation = await Vacation.create({destination, country, description, image, price, dateFrom, dateTo, followers: []});
         return newVacation;
     }
-    async updateOne(id, vacation) {
+    async updateOne(id, {vacation}) {
         if(!id || !vacation) {
             throw new Error('Not provided enough data');
         }
-        const updatedVacation = await Vacation.findByIdAndUpdate(id, vacation, {
-            new: true,
-        })
+        const prevVacation = await Vacation.findById(id);
+        let newVacation = {...prevVacation, vacation};
+        const updatedVacation = await Vacation.findByIdAndUpdate(id, newVacation.vacation);
         return updatedVacation;
     }
     async toggleFollowing(id, userId) {
@@ -54,7 +55,7 @@ class vacationService {
             throw new Error('Not given id');
         }
         const vacationToDelete = await Vacation.findByIdAndDelete(id);
-        return vacationToDelete; // meanwhile returns deleted object. Maybe add 'undo'???
+        return vacationToDelete;
     }
 }
 
