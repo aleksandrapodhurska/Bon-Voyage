@@ -22,14 +22,15 @@ const useProvideAuth = () => {
 	const [vacationToUpdate, setVacationToUpdate] = useState(null);
 
 	useEffect(() => {
+		setLoading(false);
 		const refreshToken = async () => {
 			if (localStorage.getItem("accessToken")) {
 				try {
+					setLoading(true);
 					const response = await axios.get(
 						`http://localhost:5000/api/refreshToken`,
 						{ withCredentials: true }
 					);
-					console.log(response);
 					if (response.status === 200) {
 						setUser(response.data.user);
 						setAuthStatus(200);
@@ -42,9 +43,9 @@ const useProvideAuth = () => {
 							JSON.stringify(response.data.user)
 						);
 						navigate("/main");
+						setLoading(false);
 					}
 				} catch (e) {
-					console.log(e.response?.data?.message);
 					setAuthStatus(e.response?.data?.message);
 				} finally {
 					setLoading(false);
@@ -54,9 +55,10 @@ const useProvideAuth = () => {
 		refreshToken();
 	}, []);
 
-	async function login(userdata) {
+	const login = async (userdata) => {
 		setLoading(true);
 		try {
+			setAuthStatus("");
 			const response = await DataBase.login(userdata);
 			if (response.status === 200) {
 				setUser(response.data.user);
@@ -70,17 +72,16 @@ const useProvideAuth = () => {
 				navigate("/main");
 			}
 		} catch (e) {
-			console.log(e.response?.data?.message);
 			setAuthStatus(e.response?.data?.message);
 			setLoading(false);
 		}
-	}
+	};
 
 	const registration = async (userdata) => {
 		setLoading(true);
 		try {
+			setAuthStatus("");
 			const response = await DataBase.registration(userdata);
-			console.log(response);
 			if (response.status === 200) {
 				setUser(response.data.user);
 				setAuthStatus(200);
@@ -93,7 +94,6 @@ const useProvideAuth = () => {
 				navigate("/main");
 			}
 		} catch (e) {
-			console.log(e.response?.data?.message);
 			setAuthStatus(e.response?.data?.message);
 			setLoading(false);
 		}
@@ -106,17 +106,26 @@ const useProvideAuth = () => {
 			if (response.status === 200) {
 				localStorage.removeItem("accessToken");
 				localStorage.removeItem("user");
-				setUser("guest");
 				setAuthStatus("");
+				setUser("guest");
 				navigate("/");
+				setLoading(false);
 			}
 		} catch (e) {
-			console.log(e.response?.data?.message);
 			setAuthStatus(e.response?.data?.message);
 			setLoading(false);
 		}
 	};
 
-	return { login, registration, logout, authStatus, loading, user, setVacationToUpdate, vacationToUpdate,
+	return {
+		login,
+		registration,
+		logout,
+		authStatus,
+		setAuthStatus,
+		loading,
+		user,
+		setVacationToUpdate,
+		vacationToUpdate,
 	};
 };

@@ -3,7 +3,7 @@ import { Navigate } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth.hook";
 
 function RequireAuth({ children }) {
-	const { authStatus, user } = useAuth();
+	const { authStatus } = useAuth();
 
 	if (!authStatus) {
 		return <Navigate to={"/login"} />;

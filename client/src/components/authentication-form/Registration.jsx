@@ -4,6 +4,7 @@ import FormInput from "../../elements/form-input/FormInput";
 import FormButton from "../../elements/form-button/FormButton";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth.hook";
+import Loader from "../loader/Loader";
 
 function Registration(props) {
 	const { registration, authStatus, loading } = useAuth();
@@ -15,7 +16,6 @@ function Registration(props) {
 		username: "",
 		password: "",
 	};
-
 	const [userdata, setUserdata] = useState(initialState);
 
 	const userdataHandler = (e) => {
@@ -34,6 +34,7 @@ function Registration(props) {
 		<div className={style.background}>
 			<div className={style.formContainer}>
 				<h2>Registration</h2>
+				{loading && <Loader/>}
 				<form
 					className={style.form}
 					onSubmit={(e) => e.preventDefault()}

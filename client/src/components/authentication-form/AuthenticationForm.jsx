@@ -10,7 +10,7 @@ function AuthenticationForm() {
 			<div className={style.welcome}>
 				<h1>We are happy to see you visiting BonVoyage service!</h1>
 				<p>
-					<a onClick={() => navigate("/login")}>Click here</a> see
+					<a onClick={() => navigate("/login")}>Click here</a> to see the
 					most beautiful destinations for your next voyage
 				</p>
 			</div>

@@ -38,12 +38,13 @@
 	}
 	.formButton {
 		cursor: pointer;
-		&:not(:disabled) {
-			background-color: $secondary-font-color;
-			border: 1px solid #ccc;
+		border: 1px solid #ccc;
 			text-align: center;
 			color: #ffffff;
 			font-weight: 700;
+			background-color: $secondary-font-color;
+		&:disabled {
+			background-color: $secondary-disabled;
 		}
 	}
 }

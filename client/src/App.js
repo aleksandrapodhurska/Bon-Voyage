@@ -4,7 +4,7 @@ import Header from "./components/header/Header";
 import MainList from "./components/main-list/MainList";
 import AuthenticationForm from "./components/authentication-form/AuthenticationForm";
 import VacationForm from "./components/vacation-form/VacationForm";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import Login from "./components/authentication-form/Login";
 import Registration from "./components/authentication-form/Registration";
 import Report from "./components/report/Report";
@@ -16,9 +16,6 @@ const App = () => {
 			<div className={style.container}>
 				<Header />
 				<Routes>
-					<Route path="/" element={<AuthenticationForm />} />
-					<Route path="login" element={<Login />} />
-					<Route path="registration" element={<Registration />} />
 					<Route
 						path="/main"
 						element={
@@ -27,6 +24,9 @@ const App = () => {
 							</RequireAuth>
 						}
 					/>
+					<Route path="/" element={<AuthenticationForm />} />
+					<Route path="login" element={<Login />} />
+					<Route path="registration" element={<Registration />} />
 					<Route
 						path="/new-vacation"
 						element={

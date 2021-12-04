@@ -1,7 +1,6 @@
 import React from "react";
 import style from "./header.module.scss";
-import man from "../../assets/icons/man.png";
-import woman from "../../assets/icons/woman.png";
+import profileIcon from "../../assets/images/user.png";
 import { useAuth } from "../../hooks/useAuth.hook";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
@@ -12,6 +11,7 @@ function Header() {
 	const submit = () => {
 		logout();
 	};
+	const location = useLocation();
 
 	const adminNav = (
 		<>
@@ -23,7 +23,10 @@ function Header() {
 
 	const notLogged = (
 		<>
-			<Link to="/login">Login</Link>
+			{location.pathname == '/login' ? 
+				<Link to="/registration">Registration</Link> :
+				<Link to="/login">Login</Link>
+			}
 		</>
 	);
 
@@ -31,7 +34,7 @@ function Header() {
 		<div className={style.header}>
 			<div className={style.user}>
 				<div className={style.profileIcon}>
-					<img src={woman} />
+					<img src={profileIcon} />
 				</div>
 				<div>Hi {user.username ? user.username : user}!</div>
 			</div>

@@ -7,15 +7,18 @@ import Modal from "../modal/Modal";
 import { useAuth } from "../../hooks/useAuth.hook";
 import UserService from "../../services/UserService";
 import { useNavigate } from "react-router-dom";
+import Loader from "../loader/Loader";
 
 function VacationForm(props) {
 	const navigate = useNavigate();
 
 	const { vacationToUpdate, setVacationToUpdate } = useAuth();
 	const [action, setAction] = useState("create");
+	const [loading, setLoading] = useState(false);
 
 	useEffect(async () => {
 		if (vacationToUpdate) {
+			setLoading(true);
 			setAction("update");
 			const data = await UserService.getVacation(vacationToUpdate);
 			setVacationData({
@@ -23,6 +26,7 @@ function VacationForm(props) {
 				dateTo: data?.dateTo.slice(0, 10),
 				dateFrom: data?.dateFrom.slice(0, 10),
 			});
+			setLoading(false);
 		}
 	}, []);
 
@@ -57,12 +61,16 @@ function VacationForm(props) {
 	const saveChanges = async () => {
 		let data;
 		if (vacationToUpdate) {
+			setLoading(true);
 			data = await AdminService.updateVacation(
 				vacationData,
 				vacationToUpdate
 			);
+			setLoading(false);
 		} else {
+			setLoading(true);
 			data = await AdminService.createVacation(vacationData);
+			setLoading(false);
 		}
 		if (!data) {
 			setAdded(false);
@@ -83,7 +91,8 @@ function VacationForm(props) {
 	return (
 		<div className={style.background}>
 			<div className={style.formContainer}>
-				{added && <Modal action={action} />}
+				{loading && <Loader/>}
+				{!loading && added && <Modal action={action} />}
 				{action === "create" && <h3>Create new Vacation</h3>}
 				{action === "update" && <h3>Update Vacation</h3>}
 				<form
@@ -149,11 +158,13 @@ function VacationForm(props) {
 						button="Save"
 						narrow="true"
 						onClick={saveChanges}
+						disabled={loading}
 					/>
 					<FormButton
 						button="Leave without changes"
 						narrow="true"
 						onClick={leaveWithoutChanges}
+						disabled={loading}
 					/>
 				</form>
 			</div>
