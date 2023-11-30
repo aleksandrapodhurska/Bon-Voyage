@@ -8,7 +8,7 @@ Also the report section is available for admin, so he can see how many users 'li
 Authentication is being performed with access token, which lifetime is cut into 15 mins. Application is using refresh token so that user can continue working without being kicked from an app when access token expires.
 Admin can view the grapf with 'following' statistics.
 
-Can be viewed on - https://bon-voyage-react.herokuapp.com/
+Can be viewed on - https://bon-voyage-app.netlify.app
 
 <img width="1434" alt="admin main page" src="https://user-images.githubusercontent.com/35921408/175361050-15f7f131-273c-40a9-b861-84a16564be98.png">
 <img width="1434" alt="admin edit item" src="https://user-images.githubusercontent.com/35921408/175782116-f670d9fa-2a09-4f5f-9a43-764734f75cfd.png">
