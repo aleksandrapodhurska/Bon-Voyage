@@ -22,7 +22,6 @@ function Login(props) {
             ...userdata, [e.target.name]: e.target.value
         })
     }
-    console.log(loading);
 
     const submit = (userdata) => {
         login(userdata);

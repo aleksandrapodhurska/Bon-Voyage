@@ -29,7 +29,9 @@
 		font-size: 1.125rem;
 		&[type="date"] {
 			align-items: center;
-			padding-inline-start: 30%;
+			padding-inline-start: 10%;
+			font-size: .75rem;
+			justify-content: flex-end;
 		}
 	}
 	textarea {
@@ -135,4 +137,30 @@ textarea:not(:focus):valid ~ .floatingLabel {
 }
 .narrow {
 	width: calc(50% - 1.5rem);
+}
+
+.extraNarrow {
+	width: calc(40% - 1.5rem);
+}
+
+input[type=date]::-webkit-datetime-edit {
+	text-align: end;
+}
+
+input[type=date]::-webkit-calendar-picker-indicator {
+	padding-left: 0;
+	margin-left: 0;
+}
+
+input[type=date]:required:invalid::-webkit-datetime-edit {
+    color: transparent;
+}
+input[type=date]:focus::-webkit-datetime-edit {
+    color: black !important;
+}
+
+@media screen and (max-width: 414px) {
+	.formButton {
+		font-size: .75rem;
+	}
 }

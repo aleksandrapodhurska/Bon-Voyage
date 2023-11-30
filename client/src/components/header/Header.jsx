@@ -1,51 +1,82 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "./header.module.scss";
 import profileIcon from "../../assets/images/user.png";
 import { useAuth } from "../../hooks/useAuth.hook";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import BurgerMenu from "../../elements/burger-menu/BurgerMenu";
 
 function Header() {
 	const { logout, authStatus, user } = useAuth();
 
-	const navigate = useNavigate();
 	const submit = () => {
+		setOpen(false);
 		logout();
 	};
 	const location = useLocation();
 
+	const [isOpen, setOpen] = useState(false);
+
+	const handleIsOpen = () => {
+		setOpen(!isOpen);
+	};
+
+	const closeSideBar = () => {
+		setOpen(false);
+	};
+
 	const adminNav = (
 		<>
-			<Link to="/main">Main</Link>
-			<Link to="/new-vacation">Add vacation</Link>
-			<Link to="/report">Report</Link>
+			<Link to="/main" className="bm-item" onClick={closeSideBar}>
+				Main
+			</Link>
+			<Link to="/new-vacation" className="bm-item" onClick={closeSideBar}>
+				Add vacation
+			</Link>
+			<Link to="/report" className="bm-item" onClick={closeSideBar}>
+				Report
+			</Link>
 		</>
 	);
 
 	const notLogged = (
 		<>
-			{location.pathname == '/login' ? 
-				<Link to="/registration">Registration</Link> :
+			{location.pathname == "/login" ? (
+				<Link to="/registration">Registration</Link>
+			) : (
 				<Link to="/login">Login</Link>
-			}
+			)}
 		</>
 	);
 
 	return (
 		<div className={style.header}>
 			<div className={style.user}>
-				<div className={style.profileIcon}>
-					<img src={profileIcon} />
+				{user.username && (
+					<div className={style.profileIcon}>
+						<img src={profileIcon} />
+					</div>
+				)}
+				<div className={style.profileName}>
+					Hi {user.username ? user.username : user}!
 				</div>
-				<div>Hi {user.username ? user.username : user}!</div>
 			</div>
 			<div className={style.logo}>BonVoyage</div>
 
 			<div className={style.nav}>
-				<nav className={style.links}>
-					{authStatus && user.role == "admin" && adminNav}
-					{!authStatus && notLogged}
-					{authStatus && <a onClick={submit}>Logout</a>}
-				</nav>
+				{!authStatus && notLogged}
+				{authStatus == 200 && user.role == "admin" && (
+					<BurgerMenu
+						isOpen={isOpen}
+						handleIsClose={handleIsOpen}
+						handleIsOpen={handleIsOpen}
+						submit={submit}
+					>
+						{adminNav}
+					</BurgerMenu>
+				)}
+				{authStatus == 200 && user.role == "user" && (
+					<a onClick={() => logout()}>Logout</a>
+				)}
 			</div>
 		</div>
 	);

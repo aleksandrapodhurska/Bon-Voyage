@@ -42,7 +42,7 @@ button {
 		border-radius: 0.715rem;
 		background: url("https://www.voyagesdereve.ch/upload/images/Paris-Tour-Eiffel.jpg");
 		background-position: center;
-		background-size: 100%;
+		background-size: cover;
 		position: relative;
 		opacity: 1;
 	}
@@ -98,6 +98,7 @@ button {
 			background-color: $secondary-font-color;
 			color: white;
 			font-weight: 700;
+			text-align: center;
 		}
 	}
 
@@ -110,15 +111,12 @@ button {
 		.title {
 			font-size: 1.25rem;
 			font-weight: 700;
-			//display: flex;
-			//align-items: baseline;
 		}
 		.subtitle,
 		.dates {
 			font-size: 0.715rem;
 			font-weight: 200;
 			color: $basic-gray-color;
-			//margin-left: .75rem;
 		}
 	}
 }
@@ -139,6 +137,7 @@ button {
 	height: calc(100% - 1.7rem);
 	bottom: 1rem;
 	width: calc(360px - 1.4rem);
+	width: calc(100% - 1.4rem);
 	background-color: rgba(255, 255, 255, 0.91);
 	border-radius: inherit;
 	overflow-y: scroll;
@@ -150,5 +149,14 @@ button {
 	.description {
 		margin-top: 1rem;
 		transition: ease-in 0.3s;
+	}
+}
+
+@media screen and (max-width: 375px) {
+	.content .info .title {
+		font-size: 1rem;
+	}
+	button {
+		font-size: 12px;
 	}
 }

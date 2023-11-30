@@ -4,7 +4,6 @@ import {
 	BsFillPencilFill,
 	BsHeart,
 	BsHeartFill,
-	BsXCircle,
 	BsXCircleFill,
 } from "react-icons/bs";
 import UserService from "../../services/UserService";
@@ -14,7 +13,7 @@ import { CSSTransition } from "react-transition-group";
 import AdminService from "../../services/AdminService";
 import { useNavigate } from "react-router-dom";
 
-function Card({ vacation, setRerender, rerender }) {
+function Card({ vacation, setRerender, rerender, searchValue }) {
 	const { user, setVacationToUpdate } = useAuth();
 	const {_id, destination, country, description, image, price, dateFrom, dateTo, followers } = vacation;
 	const [showMore, setShowMore] = useState(false);
@@ -32,7 +31,9 @@ function Card({ vacation, setRerender, rerender }) {
 		const data = await UserService.toggleFollowing(_id, user.id);
 		setLike(data.followers.includes(user.id));
 		setFollowersQty(data.followers.length);
-		setRerender(rerender + 1);
+		if(!searchValue) {
+			setRerender(rerender + 1);
+		}
 	};
 
 	const deleteVacation = async (id) => {

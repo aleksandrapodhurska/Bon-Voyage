@@ -135,7 +135,7 @@ function VacationForm(props) {
 						min={today}
 						step={1}
 						onChange={vacationDataHandler}
-						value={vacationData.dateFrom}
+						value={vacationData.dateFrom ? vacationData.dateFrom : ''}
 					/>
 					<FormInput
 						type="date"
@@ -144,7 +144,7 @@ function VacationForm(props) {
 						min={today}
 						step={1}
 						onChange={vacationDataHandler}
-						value={vacationData.dateTo}
+						value={vacationData.dateTo ? vacationData.dateTo : ''}
 					/>
 					<FormInput
 						type="number"
