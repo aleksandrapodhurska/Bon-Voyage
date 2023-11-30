@@ -5,13 +5,13 @@ import './index.scss';
 import App from './App';
 import {ProvideAuth} from "./hooks/useAuth.hook";
 
+document.title = "BonVoyage";
+
 ReactDOM.render(
     <BrowserRouter>
-      <React.StrictMode>
-          <ProvideAuth>
-              <App />
-          </ProvideAuth>
-      </React.StrictMode>
+      <ProvideAuth>
+          <App />
+      </ProvideAuth>
     </BrowserRouter>,
   document.getElementById('root')
 );
